@@ -1,0 +1,40 @@
+{
+  manifest_version: "0.1.0",
+  program: {
+    image: "tenalirama2026/pi-bench-agentx:v22",
+    entrypoint: ["/app/start.sh"],
+    env: {
+      NVIDIA_API_KEY: "${config.nvidia_api_key}",
+      NEBIUS_API_KEY: "${config.nebius_api_key}",
+      OPENAI_API_KEY: "${config.openai_api_key}",
+      PORT: "9019",
+    },
+    network: {
+      endpoints: [
+        { name: "a2a", port: 9019 },
+      ],
+    },
+  },
+  config_schema: {
+    type: "object",
+    properties: {
+      nvidia_api_key: { type: "string", secret: true },
+      nebius_api_key: { type: "string", secret: true },
+      openai_api_key: { type: "string", secret: true },
+    },
+    required: ["nvidia_api_key", "openai_api_key"],
+    additionalProperties: false,
+  },
+  provides: {
+    a2a: { kind: "a2a", endpoint: "a2a" },
+  },
+  exports: {
+    a2a: "a2a",
+  },
+  metadata: {
+    assessment_config: {
+      domain: "all",
+    },
+    participant_roles: ["agent"],
+  },
+}
