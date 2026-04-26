@@ -1,7 +1,7 @@
 {
   manifest_version: "0.1.0",
   program: {
-    image: "tenalirama2026/pi-bench-agentx:v26",
+    image: "tenalirama2026/pi-bench-agentx:v27",
     entrypoint: ["/app/start.sh"],
     env: {
       NVIDIA_API_KEY: "${config.nvidia_api_key}",
