@@ -4,7 +4,6 @@
     image: "tenalirama2026/pi-bench-agentx:v34",
     entrypoint: ["/app/start.sh"],
     env: {
-      NVIDIA_API_KEY: "${config.nvidia_api_key}",
       NEBIUS_API_KEY: "${config.nebius_api_key}",
       OPENAI_API_KEY: "${config.openai_api_key}",
       PORT: "9019",
@@ -18,11 +17,10 @@
   config_schema: {
     type: "object",
     properties: {
-      nvidia_api_key: { type: "string", secret: true },
       nebius_api_key: { type: "string", secret: true },
       openai_api_key: { type: "string", secret: true },
     },
-    required: ["nvidia_api_key", "nebius_api_key", "openai_api_key"],
+    required: ["nebius_api_key", "openai_api_key"],
     additionalProperties: false,
   },
   provides: {
