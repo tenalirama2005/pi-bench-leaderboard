@@ -1,7 +1,7 @@
 {
   manifest_version: "0.1.0",
   program: {
-    image: "tenalirama2026/pi-bench-agentx:v34",
+    image: "tenalirama2026/pi-bench-agentx:v35",
     entrypoint: ["/app/start.sh"],
     env: {
       NEBIUS_API_KEY: "${config.nebius_api_key}",
