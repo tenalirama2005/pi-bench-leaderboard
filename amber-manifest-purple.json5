@@ -1,12 +1,11 @@
 {
   manifest_version: "0.1.0",
   program: {
-    image: "tenalirama2026/pi-bench-agentx:v36",
+    image: "tenalirama2026/pi-bench-agentx:v37",
     entrypoint: ["/app/start.sh"],
     env: {
+      NEBIUS_API_KEY: "${config.nebius_api_key}",
       OPENAI_API_KEY: "${config.openai_api_key}",
-      AZURE_OPENAI_KEY: "${config.azure_openai_key}",
-      AZURE_OPENAI_ENDPOINT: "https://malt-agentx-resource.cognitiveservices.azure.com/",
       PORT: "9019",
     },
     network: {
@@ -18,10 +17,10 @@
   config_schema: {
     type: "object",
     properties: {
+      nebius_api_key: { type: "string", secret: true },
       openai_api_key: { type: "string", secret: true },
-      azure_openai_key: { type: "string", secret: true },
     },
-    required: ["openai_api_key", "azure_openai_key"],
+    required: ["nebius_api_key", "openai_api_key"],
     additionalProperties: false,
   },
   provides: {
