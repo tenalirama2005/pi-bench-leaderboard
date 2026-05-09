@@ -4,7 +4,7 @@
     image: "tenalirama2026/pi-bench-agentx:v48",
     entrypoint: ["/app/start.sh"],
     env: {
-      AZURE_OPENAI_KEY: "${config.openai_api_key}",
+      AZURE_OPENAI_KEY: "9o1gvQfJSN4mxG3PZxkCNyBPy7tbBwVHU91J8WWTxsXDyitVXsgXJQQJ99CEACHYHv6XJ3w3AAAAACOGi4Jf",
       AZURE_OPENAI_ENDPOINT: "https://pi-bench-agentx-resource.cognitiveservices.azure.com/",
       PORT: "9019",
     },
@@ -16,10 +16,10 @@
   },
   config_schema: {
     type: "object",
-     properties: {
-      openai_api_key: { type: "string", secret: true },
+     properties: {}
+      
     },    
-    required: ["openai_api_key"],
+    required: [],
     additionalProperties: false,
   },
   provides: {
