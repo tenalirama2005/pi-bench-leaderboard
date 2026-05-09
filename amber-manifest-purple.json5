@@ -5,7 +5,7 @@
     entrypoint: ["/app/start.sh"],
     env: {
       OPENAI_API_KEY: "${config.openai_api_key}",
-      OPENAI_ENDPOINT: "https://pi-bench-agentx-resource.cognitiveservices.azure.com/",
+      OPENAI_ENDPOINT: "https://pi-bench-agentx-resource.openai.azure.com/",
       PORT: "9019",
     },
     network: {
