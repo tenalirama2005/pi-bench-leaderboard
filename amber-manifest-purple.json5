@@ -16,10 +16,9 @@
   },
   config_schema: {
     type: "object",
-    properties: {
-      openai_api_key: { type: "string", secret: true },
+    properties: {},
     },
-    required: ["openai_api_key"],
+    required: [],
     additionalProperties: false,
   },
   provides: {
